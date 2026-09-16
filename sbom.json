@@ -1,0 +1,76 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:0c0a5f4e-d0d8-4edb-a5c4-9f5e6f8c2d17",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-16T13:00:00Z",
+    "tools": [
+      {
+        "vendor": "Microwave Controls Group",
+        "name": "oven-sbom-generator",
+        "version": "3.4.1"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "bom-ref": "pkg:generic/microwave-control-firmware@1.0.0",
+      "group": "com.microwave.controls",
+      "name": "microwave-control-firmware",
+      "version": "1.0.0"
+    }
+  },
+  "components": [
+    {
+      "type": "file",
+      "bom-ref": "file:OVEN_CHICKEN_RECIPE.cpp",
+      "name": "OVEN_CHICKEN_RECIPE.cpp",
+      "version": "1.0.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7f5d1c1bb4f1c6a7b2a65f0c9b8e7d6c5a4f3e2d1c0b9a887766554433221100"
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:component:type",
+          "value": "source-file"
+        },
+        {
+          "name": "cdx:source:path",
+          "value": "src/OVEN_CHICKEN_RECIPE.cpp"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/microwave-safety-core@4.2.1",
+      "group": "com.microwave.controls",
+      "name": "microwave-safety-core",
+      "version": "4.2.1",
+      "scope": "required",
+      "purl": "pkg:generic/microwave-safety-core@4.2.1"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:generic/chicken-thermometer-sdk@2.8.0",
+      "group": "com.microwave.controls",
+      "name": "chicken-thermometer-sdk",
+      "version": "2.8.0",
+      "scope": "optional",
+      "purl": "pkg:generic/chicken-thermometer-sdk@2.8.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:generic/microwave-control-firmware@1.0.0",
+      "dependsOn": [
+        "file:OVEN_CHICKEN_RECIPE.cpp",
+        "pkg:generic/microwave-safety-core@4.2.1",
+        "pkg:generic/chicken-thermometer-sdk@2.8.0"
+      ]
+    }
+  ]
+}
